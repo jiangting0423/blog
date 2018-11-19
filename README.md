@@ -4,7 +4,7 @@ jiangting's personal blog, a recording of progress
 ## 1 To-do List
 创建日期|事件|完成度
 -|-|-
-20181117|上传以前的小项目至blog|[]
+20181117|上传以前的小项目至blog|[YES]
 
 ## 2 实物书单
 书名|创建日期|完成度
