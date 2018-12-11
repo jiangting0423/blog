@@ -1,0 +1,14 @@
+/*《精通CSS》dome chapter7表格表单*/
+
+
+table.cal{
+    border-collapse:separate;
+    text-align: center;/*question1:text-align是对该元素下的所有后代元素中的字体进行设置吗？*/
+    color:#333;
+}
+
+.cal th,
+.cal td{
+    margin:0;
+    padding:0;
+}
