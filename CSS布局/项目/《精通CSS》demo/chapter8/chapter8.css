@@ -1,4 +1,6 @@
 /*《精通CSS》dome chapter8布局*/
+/*8.1 计划布局*/
+
 /*8.2 设置基本结构*/
 .wrapper {
     width: 920px;
@@ -77,43 +79,141 @@
     float: right;
 }
 
-
 /*8.4 固定宽度布局、流式布局、弹性布局*/
 /*8.4.1 流式布局*/
 /*question4:静态布局／固定宽度布局、流式布局、弹性布局、自适应布局、响应式布局的优缺点？*/
-.content3{
-    width:80%;
+.content3 {
+    width: 80%;
+    min-width: 992px;
     border: 1px solid black;
-    margin:0 auto;
+    margin: 0 auto;
     overflow: hidden;
 }
 
-.primary3{
-    width:72.82%;
+.primary3 {
+    width: 72.82%;
     border: 1px solid black;
-    float:right;
+    float: right;
 }
 
-.secondary3{
-    width:25%;
+.secondary3 {
+    width: 25%;
     border: 1px solid black;
-    float:left;
+    float: left;
+    /*question5:为什么secondary3是在content3的下面？*/
 }
 
-.primary3-1{
-    width:59.7%;
+.primary3-1 {
+    width: 59.7%;
     border: 1px solid black;
     float: left;
 }
 
-.secondary3-2{
-    width:34.33%;
+.secondary3-2 {
+    width: 34.33%;
     border: 1px solid black;
     padding-right: 2.63%;
     float: right;
 }
 
 /*8.4.2 弹性布局*/
+.content4 {
+    width: 92em;
+    min-width: 95%;
+    border: 1px solid black;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 62.5%;
+}
 
+.primary4 {
+    width: 72.82%;
+    border: 1px solid black;
+    float: right;
+}
 
+.secondary4 {
+    width: 25%;
+    border: 1px solid black;
+    float: left;
+}
 
+.primary4-1 {
+    width: 59.7%;
+    border: 1px solid black;
+    float: left;
+}
+
+.secondary4-2 {
+    width: 34.33%;
+    border: 1px solid black;
+    padding-right: 2em;
+    float: right;
+}
+
+/*8.4.3 流式图像、弹性图像*/
+.branding1 {
+    height: 171px;
+    background: url("img/branding.png") no-repeat left top;
+}
+
+.branding2 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.branding3 {
+    overflow: hidden;
+}
+
+.img3 {
+    width: 25%;
+    padding: 20px;
+    float: left;
+}
+
+.p3 {
+    width: 68%;
+    padding: 20px;
+    float: right;
+}
+
+/*8.5 faux列*/
+
+/*8.6 高度相等的列*/
+.wrapper6 {
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+    /*question6:overflow:hidden到底是从哪里开始被裁剪？*/
+    /*answer6:在所有子元素浮动的情况下，以height最大的子元素为界被裁剪*/
+}
+
+.box6 {
+    width: 250px;
+    padding: 20px 20px 520px 20px;
+    margin-left: 20px;
+    margin-bottom: -500px;
+    /*question7:margin为负数怎么影响盒子模型？*/
+    /*answer7:盒子模型向内缩进*/
+    float: left;
+    background: #89ac10 url("img/top.gif") no-repeat left top;
+}
+
+.bottom6 {
+    position: absolute;
+    bottom: 0;
+    width: 290px;
+    height: 20px;
+    margin-left: -20px; /*question8:为什么没有这个会错乱？*/
+    background: #89ac10 url("img/bottom.gif") no-repeat bottom left;
+}
+
+/*8.7 CSS3列*/
+.col {
+    column-count: 3;
+    column-width: 14em;
+    column-gap: 2em;
+    column-rule: 1px solid #ccc;
+}
