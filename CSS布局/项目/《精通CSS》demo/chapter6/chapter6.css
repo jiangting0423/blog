@@ -1,185 +1,266 @@
 /*《精通CSS》dome chapter6导航    4个question待解答*/
 /*6.1 基本列表样式*/
-ul.nav1{
-    margin:0;
-    padding:0;
-    list-style-type:none;
+ul.nav1 {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-ul.nav1 li{
+ul.nav1 li {
     background: url(img/tick.png) no-repeat 0 50%;
     padding-left: 30px;
-    vertical-align: middle;/*vertical-align只对行内元素起作用，这行代码实际上不起作用*/
+    vertical-align: middle; /*vertical-align只对行内元素起作用，这行代码实际上不起作用*/
 }
 
 /*6.2 垂直导航条*/
-ul.nav2{
-    margin:0;
-    padding:0;
-    list-style-type:none;
-    width:8em;
+ul.nav2 {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 8em;
     background-color: #8BD400;
-    border:1px solid #486B02;
+    border: 1px solid #486B02;
 }
-ul.nav2 a{
-    display:block;/*margin、padding对内联元素不起作用，所以要设置成块级元素*/
-    color:#2B3F00;
+
+ul.nav2 a {
+    display: block; /*margin、padding对内联元素不起作用，所以要设置成块级元素*/
+    color: #2B3F00;
     text-decoration: none;
-    border-top:1px solid #E4FFD3;
-    border-bottom:1px solid #486B02;
-    background:url(img/arrow.gif) no-repeat 5% 50%;
-    padding:0.3em 1em;
+    border-top: 1px solid #E4FFD3;
+    border-bottom: 1px solid #486B02;
+    background: url(img/arrow.gif) no-repeat 5% 50%;
+    padding: 0.3em 1em;
 }
-ul.nav2 .last a{
+
+ul.nav2 .last a {
     border-bottom: 0;
 }
+
 ul.nav2 a:hover,
 ul.nav2 a:focus {
-    color:#E4FFD3;
+    color: #E4FFD3;
     background-color: #6DA203;
 }
 
 /*6.3 在垂直导航条中突出显示当前页面*/
-#home .nav2 .home a{
-    color:#fff;
-    cursor:default;
+#home .nav2 .home a {
+    color: #fff;
+    cursor: default;
 }
 
 /*6.4 水平导航条*/
-ol.pagination{
-    margin:0;
-    padding:0;
-    list-style-type:none;
-    color:blue;
+ol.pagination {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: blue;
 }
-ol.pagination li{
-    float:left;/*设置float:left之后会脱离文档流 直到碰到包含块或者浮动的边框*/
-    /*question1:浮动之后的元素在不在父元素里？如果不在父元素里 该浮动元素是不是应该在整个HTML文档的最前面？*/
-    /*answer1:分两种情况 情况1父元素不是浮动的且没有其他清除浮动的设置，那么浮动的子元素不在父元素里 在整个HTML文档的最前面；情况2父元素是浮动的，那么浮动的子元素在浮动的父元素里*/
-    margin-right:0.6em;
+
+ol.pagination li {
+    float: left; /*设置float:left之后会脱离文档流 直到碰到包含块或者浮动的边框*/
+    /*question1:浮动的子元素在不在父元素里？如果不在父元素里，该浮动元素是不是应该在整个HTML文档的最前面？*/
+    /*answer1:分两种情况 情况1父元素不是浮动的且没有其他清除浮动的设置，那么浮动的子元素不在父元素里，在整个HTML文档的最前面；情况2父元素是浮动的，那么浮动的子元素在浮动的父元素里*/
+    margin-right: 0.6em;
 }
+
 ol.pagination a,
-ol.pagination li.selected{
-    display: block;/*margin、padding对内联元素不起作用，所以要设置成块级元素*/
-    padding:0.2em 0.5em;
-    border:1px solid #ccc;
+ol.pagination li.selected {
+    display: block; /*margin、padding对内联元素不起作用，所以要设置成块级元素*/
+    padding: 0.2em 0.5em;
+    border: 1px solid #ccc;
     text-decoration: none;
 }
+
 ol.pagination a:hover,
 ol.pagination a:focus,
-ol.pagination li.selected{
+ol.pagination li.selected {
     background-color: blue;
-    color:white;
+    color: white;
 }
+
 ol.pagination a[rel="prev"],
-ol.pagination a[rel="next"]{
-    border:none;
+ol.pagination a[rel="next"] {
+    border: none;
 }
-ol.pagination a[rel="prev"]:before{
-    content:"\00AB";/*在特定的a元素前添加内容*/
-    padding-right:0.5em;
+
+ol.pagination a[rel="prev"]:before {
+    content: "\00AB"; /*在特定的a元素前添加内容*/
+    padding-right: 0.5em;
 }
-ol.pagination a[rel="next"]:after{
-    content:"\00BB";/*在特定的a元素后添加内容*/
-    padding-right:0.5em;
+
+ol.pagination a[rel="next"]:after {
+    content: "\00BB"; /*在特定的a元素后添加内容*/
+    padding-right: 0.5em;
 }
 
 /*6.5 图形化导航条*/
-ul.nav5{
-    margin:0;
-    padding:0;
-    list-style-type:none;
-    width:68em;
-    overflow: hidden;/*overflow: hidden还可以用来让父元素包含浮动的子元素*/
-    background:#FAA819 url(img/mainNavBg.gif) repeat-x;
+ul.nav5 {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 68em;
+    overflow: hidden; /*overflow: hidden还可以用来让父元素包含浮动的子元素*/
+    background: #FAA819 url(img/mainNavBg.gif) repeat-x;
 }
-ul.nav5 li{
-    float:left;
+
+ul.nav5 li {
+    float: left;
 }
-ul.nav5 a{
+
+ul.nav5 a {
     display: block;
-    padding:0 3em;
-    line-height:2.1em;
-    background:url(img/divider.gif) repeat-y left top;
+    padding: 0 3em;
+    line-height: 2.1em;
+    background: url(img/divider.gif) repeat-y left top;
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
-ul.nav5 li:first-child a{
+
+ul.nav5 li:first-child a {
     background-image: none;
 }
+
 ul.nav5 a:hover,
-ul.nav5 a:focus{
-    color:#333;
+ul.nav5 a:focus {
+    color: #333;
 }
 
 /*6.6 滑动门标签页式导航*/
-ul.nav6{
-    margin:0;
-    padding:0;
-    list-style:none;
-    width:72em;
-    overflow:hidden;
+ul.nav6 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 72em;
+    overflow: hidden;
 }
-ul.nav6 li{
-    float:left;
+
+ul.nav6 li {
+    float: left;
     background: url(img/tab-right.gif) no-repeat right top;
 }
-ul.nav6 li a{
-    display:block;
-    padding:0 2em;
-    line-height:2.5em;
+
+ul.nav6 li a {
+    display: block;
+    padding: 0 2em;
+    line-height: 2.5em;
     background: url(img/tab-left.gif) no-repeat left top;
     text-decoration: none;
-    color:#fff;
-    font-size:1em;/*question2:font-size和line-height的关系*/
+    color: #fff;
+    font-size: 1em; /*question2:font-size和line-height的关系*/
 }
+
 ul.nav6 a:hover,
-ul.nav6 a:focus{
-    color:#333;
+ul.nav6 a:focus {
+    color: #333;
+}
+
+/*6.6 滑动门标签页式导航test 使用border-radius*/
+.test6H3 {
+    color: red;
 }
 
 /*6.7 Suckerfish下拉菜单*/
 ul.nav7,
-ul.nav7 ul{
-    margin:0;
-    padding:0;
-    list-style-type:none;
-    border:1px solid #486B02;
+ul.nav7 ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #486B02;
     background-color: #8BD400;
-    float:left;
+    float: left;
 }
-ul.nav7 li{
-    width:8em;
+
+ul.nav7 li {
+    width: 8em;
     background-color: #8BD400;
-    float:left;
+    float: left;
 }
-ul.nav7 li ul{
-    position:absolute;/*question3:position:absolute的时候没有指定偏移距离会怎么样？position:absolute的时候元素会突破父元素的限制吗？*/
-    left:-999em;
-    width:8em;/*question4:子元素的width一定在父元素的width内吗？*/
+
+ul.nav7 li ul {
+    position: absolute; /*question3:position:absolute的时候没有指定偏移距离会怎么样？position:absolute的时候子元素会突破父元素的限制吗？*/
+    left: -999em;
+    width: 8em; /*question4:在浮动或者不浮动的情况下，子元素一定在父元素内吗？子元素的width一定小于等于父元素的width吗？*/
 }
-ul.nav7 li:hover ul{
-    left:auto;
+
+ul.nav7 li:hover ul {
+    left: auto;
 }
+
 ul.nav7 a:hover,
-ul.nav7 a:focus{
-    color:#E4FFD3;
+ul.nav7 a:focus {
+    color: #E4FFD3;
     background-color: #6DA203;
 }
-ul.nav7 a{
-    display:block;
-    color:#2B3F00;
+
+ul.nav7 a {
+    display: block;
+    color: #2B3F00;
     text-decoration: none;
-    padding:0.3em 1em;
-    border-right:1px solid #486B02;
-    border-left:1px solid #E4FFD3;
+    padding: 0.3em 1em;
+    border-right: 1px solid #486B02;
+    border-left: 1px solid #E4FFD3;
 }
-ul.nav7 li li a{
-    border-top:1px solid #E4FFD3;
-    border-bottom:1px solid #486B02;
-    border-left:0;
-    border-right:0;
+
+ul.nav7 li li a {
+    border-top: 1px solid #E4FFD3;
+    border-bottom: 1px solid #486B02;
+    border-left: 0;
+    border-right: 0;
 }
-ul.nav7 li:last-child a{
+
+ul.nav7 li:last-child a {
     border-bottom: 0;
+}
+
+/*6.8 Suckerfish下拉菜单test 使代码更具可读性*/
+.test8H3 {
+    color: red;
+}
+
+.test8 .testUl {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 1px solid #486B02;
+    background-color: #8BD400;
+    float: left;
+}
+
+.test8 .testUl .testLi {
+    width: 180px;
+    background-color: #8BD400;
+    float: left;
+}
+
+.test8 .testUl .testLi .testA {
+    display: block;
+    color: #2B3F00;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-right: 1px solid #486B02;
+    border-left: 1px solid #E4FFD3;
+}
+
+.ulContain {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    left: -9999px;
+    width: 178px;
+    border: 1px solid #486B02;
+}
+
+.testLi:hover .ulContain {
+    left: auto;
+}
+
+.ulContain .liContain {
+    width: 178px;
+    background-color: #8BD400;
+}
+
+.ulContain .liContain .aContain {
+    padding: 5px 10px;
+    width: 178px;
 }

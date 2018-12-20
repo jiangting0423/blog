@@ -1,14 +1,312 @@
 /*《精通CSS》dome chapter7表格表单*/
-
-
-table.cal{
-    border-collapse:separate;
-    text-align: center;/*question1:text-align是对该元素下的所有后代元素中的字体进行设置吗？*/
-    color:#333;
+/*7.1 表格（日历）*/
+/*整个表格*/
+.cal {
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: center; /*question1:text-align是对该元素下的所有后代元素中的字体进行设置吗？*/
+    color: #333;
 }
 
 .cal th,
-.cal td{
-    margin:0;
-    padding:0;
+.cal td {
+    margin: 0;
+    padding: 0;
 }
+
+/*1表格的标题部分caption*/
+.Caption {
+    font-size: 20px;
+    background-color: #d4dde6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.captionPrev {
+    float: left; /*question2:浮动的子元素总是包含在父元素内吗？浮动是脱离文档流的，为什么有时候没把普通流中的其他元素挡住？*/
+    margin-left: 10px;
+}
+
+.captionNext {
+    float: right;
+    margin-right: 10px;
+}
+
+.Caption a:link,
+.Caption a:visited {
+    text-decoration: none;
+    color: #333;
+    padding: 0 5px;
+}
+
+.Caption a:hover,
+.Caption a:active,
+.Caption a:focus {
+    background-color: #6d8ab7;
+}
+
+/*2表格的表头部分thead*/
+.theadTh {
+    background-color: #d4dde6;
+    border-bottom: 1px solid #a9bacb;
+    font-size: 15px;
+}
+
+/*3表格的内容部分tbody，日期分3种：tbodyNull无效日期、tbodyTd普通日期、tbodySelected当前日期*/
+/*所有日期的阴影样式，无效日期的颜色样式*/
+.Tbody {
+    color: #a4a4a4;
+    background-color: #d0d9e2;
+    text-shadow: 1px 1px 1px white;
+}
+
+/*无效日期、没有特殊情况的普通日期的边框样式*/
+.tbodyTd,
+.tbodyNull {
+    border-top: 1px solid #e0e0e1;
+    border-right: 1px solid #9f9fa1;
+    border-bottom: 1px solid #acacad;
+    border-left: 1px solid #dfdfe0;
+}
+
+/*所有日期的边距样式，没有特殊情况的普通日期的颜色样式*/
+.tbodyTd a,
+.tbodySelected a,
+.tbodyNull a {
+    display: block;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #c0c8d2;
+    font-weight: bold;
+}
+
+/*鼠标经过／取得焦点的普通日期、当前日期显示被按下的颜色及阴影样式*/
+.tbodyTd a:hover,
+.tbodyTd a:focus,
+.tbodyTd a:active,
+.tbodySelected a:link,
+.tbodySelected a:visited,
+.tbodySelected a:hover,
+.tbodySelected a:focus,
+.tbodySelected a:active {
+    color: white;
+    background-color: #6d8ab7;
+    text-shadow: 1px 1px 2px #22456b;
+}
+
+/*鼠标经过的普通日期、当前日期显示被按下的边框样式*/
+.tbodyTd:hover,
+.tbodySelected {
+    border-top: 1px solid #2a3647;
+    border-right: 1px solid #465977;
+    border-bottom: 1px solid #576e92;
+    border-left: 1px solid #466080;
+}
+
+/*7.2 简单的表单*/
+/*文本input、文本区域、单选input共用的样式*/
+.inputFieldset,
+.textFieldset,
+.radioFieldset {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+
+.inputLegend,
+.textLegend,
+.radioLegend {
+    font-weight: bold;
+}
+
+.inputLabel,
+.textLabel,
+.radioLabel {
+    display: block;
+    cursor: pointer;
+}
+
+/*7.2.1 文本input*/
+.required {
+    font-size: 15px;
+    color: #760000;
+}
+
+.inputInput {
+    width: 200px;
+    border-top: 2px solid #999;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 2px solid #999;
+}
+
+.inputInput:focus {
+    background: #ffc;
+}
+
+/*7.2.2 文本区域*/
+.textText {
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid #999;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 2px solid #999;
+}
+
+.textText:focus {
+    background: #ffc;
+}
+
+/*7.2.3 单选input*/
+.radioInput {
+    margin-right: 10px;
+}
+
+/*7.3 复杂的表单*/
+/*表单的第1、2、3、4部分共用的样式*/
+.yourFieldset,
+.personalFieldset,
+.commentsFieldset,
+.rememberFieldset {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+}
+
+.yourLegend,
+.personalLegend,
+.commentsLegend,
+.rememberLegend {
+    font-weight: bold;
+}
+
+.yourLabel,
+.personalLabelPlace,
+.personalLabelDate,
+.commentsLabel,
+.rememberLabel {
+    float: left;
+    width: 150px;
+    cursor: pointer;
+}
+
+/*表单的第1部分Your Contact Details的样式*/
+.required {
+    font-size: 15px;
+    color: #760000;
+}
+
+.yourInput {
+    width: 200px;
+    border-top: 2px solid #999;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 2px solid #999;
+}
+
+.yourInput:focus {
+    background: #ffc;
+}
+
+.yourDiv {
+    clear: left;
+    position: relative; /*question6:absolute是根据前面的relative定位的吗？*/
+}
+
+.feedback {
+    position: absolute;
+    left: 400px;
+    font-weight: bold;
+    color: #760000;
+    padding-left: 18px;
+    background: url("img/error.png") no-repeat; /*question7:background如果不设置left top*/
+}
+
+/*第2部分Personal Information的样式*/
+.personalLabelMonth,
+.personalLabelYear {
+    display: none;
+}
+
+.personalInputDate {
+    width: 60px;
+    margin-right: 10px;
+}
+
+.personalSelectMonth {
+    width: 200px;
+    margin-right: 10px;
+}
+
+.personalInputYear {
+    width: 100px;
+}
+
+/*Favorite Color*/
+.personalFieldsetColor {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.personalH4 {
+    width: 150px;
+    float: left;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.personalDivColor1,
+.personalDivColor2 {
+    width: 150px;
+    float: left;
+    clear: none;
+}
+
+/*第3部分Comments的样式*/
+.commentsText {
+    height: 100px;
+    border-top: 2px solid #999;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 2px solid #999;
+}
+
+.commentsText:focus {
+    background: #ffc;
+}
+
+/*第4部分Remember Me的样式*/
+.rememberInput {
+    margin-right: 10px;
+}
+
+/*第5部分Book Now的样式*/
+.bookButton1 {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.bookButton2 {
+    width: 200px;
+    height: 50px;
+    border: 1px solid #989898;
+    border-radius: 6px;
+    background: url("img/button-bg.png") #c5e063 bottom left repeat-x;
+    box-shadow: 2px 2px 2px #ccc;
+    color: #fff;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #666;
+}
+
+/*question3:不同父元素的子元素，对子元素设置了浮动和width，为什么就会出现乱层？*/
+/*question4:input元素type为submit button元素 这两者看上去是一样的，实际上有什么区别吗？*/
+/*answer:前者提交表单数据至表单处理程序*/
+/*question5:父元素浮动的时候 包含在内的子元素会怎么样呢？*/

@@ -3,76 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <title>《精通CSS》dome chapter7表格表单</title>
+    <link rel="stylesheet" type="text/css" href="chapter7.css">
 </head>
 <body>
-<h3>7.1 数据表格（日历）</h3>
+<h3>7.1 表格（日历）</h3>
 <table class="cal" summary="A calendar style date picker">
-    <caption>
-        <a>&lt;</a>
-        January 2008
-        <a>&gt;</a>
+    <!--1表格的标题部分caption    start-->
+    <caption class="Caption">
+        <a class="captionPrev" href="#">&lt;</a>January 2019<a class="captionNext" href="#">&gt;</a>
     </caption>
+    <!--1表格的标题部分caption    end-->
 
+    <!--2表格的表头部分thead    start-->
     <thead>
     <tr>
-        <th>Sun</th>
-        <th>Mon</th>
-        <th>Tue</th>
-        <th>Wed</th>
-        <th>Tur</th>
-        <th>Fri</th>
-        <th>Sat</th>
+        <th class="theadTh">Sun</th>
+        <th class="theadTh">Mon</th>
+        <th class="theadTh">Tue</th>
+        <th class="theadTh">Wed</th>
+        <th class="theadTh">Tur</th>
+        <th class="theadTh">Fri</th>
+        <th class="theadTh">Sat</th>
     </tr>
     </thead>
+    <!--2表格的表头部分thead    end-->
 
-    <tbody>
+    <!--3表格的内容部分tbody，日期分3种：tbodyTd tbodySelected tbodyNull    start-->
+    <tbody class="Tbody">
     <tr>
-        <td>30</td>
-        <td>31</td>
-        <td><a href="#">1</a></td>
-        <td><a href="#">2</a></td>
-        <td><a href="#">3</a></td>
-        <td><a href="#">4</a></td>
-        <td><a href="#">5</a></td>
+        <td class="tbodyNull">30</td>
+        <td class="tbodyNull">31</td>
+        <td class="tbodyTd"><a href="#">1</a></td>
+        <td class="tbodyTd"><a href="#">2</a></td>
+        <td class="tbodyTd"><a href="#">3</a></td>
+        <td class="tbodyTd"><a href="#">4</a></td>
+        <td class="tbodyTd"><a href="#">5</a></td>
     </tr>
     <tr>
-        <td><a href="#">6</a></td>
-        <td><a href="#">7</a></td>
-        <td class="selected"><a href="#">8</a></td>
-        <td><a href="#">9</a></td>
-        <td><a href="#">10</a></td>
-        <td><a href="#">11</a></td>
-        <td><a href="#">12</a></td>
+        <td class="tbodyTd"><a href="#">6</a></td>
+        <td class="tbodyTd"><a href="#">7</a></td>
+        <td class="tbodySelected"><a href="#">8</a></td>
+        <td class="tbodyTd"><a href="#">9</a></td>
+        <td class="tbodyTd"><a href="#">10</a></td>
+        <td class="tbodyTd"><a href="#">11</a></td>
+        <td class="tbodyTd"><a href="#">12</a></td>
     </tr>
     <tr>
-        <td><a href="#">13</a></td>
-        <td><a href="#">14</a></td>
-        <td><a href="#">15</a></td>
-        <td><a href="#">16</a></td>
-        <td><a href="#">17</a></td>
-        <td><a href="#">18</a></td>
-        <td><a href="#">19</a></td>
+        <td class="tbodyTd"><a href="#">13</a></td>
+        <td class="tbodyTd"><a href="#">14</a></td>
+        <td class="tbodyTd"><a href="#">15</a></td>
+        <td class="tbodyTd"><a href="#">16</a></td>
+        <td class="tbodyTd"><a href="#">17</a></td>
+        <td class="tbodyTd"><a href="#">18</a></td>
+        <td class="tbodyTd"><a href="#">19</a></td>
     </tr>
     <tr>
-        <td><a href="#">20</a></td>
-        <td><a href="#">21</a></td>
-        <td><a href="#">22</a></td>
-        <td><a href="#">23</a></td>
-        <td><a href="#">24</a></td>
-        <td><a href="#">25</a></td>
-        <td><a href="#">26</a></td>
+        <td class="tbodyTd"><a href="#">20</a></td>
+        <td class="tbodyTd"><a href="#">21</a></td>
+        <td class="tbodyTd"><a href="#">22</a></td>
+        <td class="tbodyTd"><a href="#">23</a></td>
+        <td class="tbodyTd"><a href="#">24</a></td>
+        <td class="tbodyTd"><a href="#">25</a></td>
+        <td class="tbodyTd"><a href="#">26</a></td>
     </tr>
     <tr>
-        <td><a href="#">27</a></td>
-        <td><a href="#">28</a></td>
-        <td><a href="#">29</a></td>
-        <td><a href="#">30</a></td>
-        <td><a href="#">31</a></td>
-        <td>1</td>
-        <td>2</td>
+        <td class="tbodyTd"><a href="#">27</a></td>
+        <td class="tbodyTd"><a href="#">28</a></td>
+        <td class="tbodyTd"><a href="#">29</a></td>
+        <td class="tbodyTd"><a href="#">30</a></td>
+        <td class="tbodyTd"><a href="#">31</a></td>
+        <td class="tbodyNull">1</td>
+        <td class="tbodyNull">2</td>
     </tr>
     </tbody>
+    <!--3表格的内容部分tbody    end-->
 </table>
 
+
+<h3>7.2 简单的表单</h3>
+<h4>7.2.1 文本input</h4>
+<fieldset class="inputFieldset">
+    <legend class="inputLegend">Your Contact Details</legend>
+    <div>
+        <label class="inputLabel" for="author">Name:<em class="required">(Required)</em></label>
+        <input class="inputInput" id="author" type="text"/>
+    </div>
+    <div>
+        <label class="inputLabel" for="email">Email Address:</label>
+        <input class="inputInput" id="email" type="text"/>
+    </div>
+    <div>
+        <label class="inputLabel" for="url">Web Address:</label>
+        <input class="inputInput" id="url" type="text"/>
+    </div>
+</fieldset>
+
+<h4>7.2.2 文本区域</h4>
+<fieldset class="textFieldset">
+    <legend class="textLegend">Comments</legend>
+    <div>
+        <label class="textLabel" for="text">Message:</label>
+        <textarea class="textText" id="text"></textarea>
+    </div>
+</fieldset>
+
+<h4>7.2.3 单选input</h4>
+<fieldset class="radioFieldset">
+    <legend class="radioLegend">Remember Me</legend>
+    <div>
+        <label class="radioLabel" for="remember-yes"><input class="radioInput" id="remember-yes"
+                                                            type="radio"/>Yes</label>
+        <label class="radioLabel" for="remember-no"><input class="radioInput" id="remember-no" type="radio"/>No</label>
+    </div>
+</fieldset>
+
+
+<h3>7.3 复杂的表单</h3>
+<!--本表单一共5部分-->
+<!--1Your Contact Details    start-->
+<fieldset class="yourFieldset">
+    <legend class="yourLegend">Your Contact Details</legend>
+    <div class="yourDiv">
+        <label class="yourLabel">Name:<em class="required">(Required)</em></label>
+        <input class="yourInput" type="text"/>
+    </div>
+    <div class="yourDiv">
+        <label class="yourLabel">Email Address:</label>
+        <input class="yourInput" type="text"/>
+        <em class="feedback">Incorrect email address. Please try again.</em>
+    </div>
+    <div class="yourDiv">
+        <label class="yourLabel">Web Address:</label>
+        <input class="yourInput" type="text"/>
+    </div>
+</fieldset>
+<!--1Your Contact Details    end-->
+
+<!--2Personal Information    start-->
+<fieldset class="personalFieldset">
+    <legend class="personalLegend">Personal Information</legend>
+    <div>
+        <label class="personalLabelPlace">Place of Birth:</label>
+        <select class="personalSelect">
+            <option>USA</option>
+            <option>UK</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="personalLabelDate">Date of Birth:</label>
+        <input class="personalInputDate" type="text">
+        <label class="personalLabelMonth">Month of Birth:</label>
+        <select class="personalSelectMonth">
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+        </select>
+        <label class="personalLabelYear">Year of Birth:</label>
+        <input class="personalInputYear" type="text">
+    </div>
+
+    <fieldset class="personalFieldsetColor">
+        <h4 class="personalH4">Favorite Color:</h4>
+        <div class="personalDivColor1">
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>red</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>yellow</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>pink</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>green</label>
+            </div>
+        </div>
+        <div class="personalDivColor2">
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>orange</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>purple</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>blue</label>
+            </div>
+            <div>
+                <input class="personalInputColor" type="checkbox">
+                <label>other</label>
+            </div>
+        </div>
+    </fieldset>
+
+</fieldset>
+<!--2Personal Information    end-->
+
+<!--3Comments    start-->
+<fieldset class="commentsFieldset">
+    <legend class="commentsLegend">Comments</legend>
+    <label class="commentsLabel">Message:<em class="required">(Required)</em></label>
+    <textarea class="commentsText"></textarea>
+</fieldset>
+<!--3Comments    end-->
+
+<!--4Remember Me    start-->
+<fieldset class="rememberFieldset">
+    <legend class="rememberLegend">Remember Me</legend>
+    <label class="rememberLabel"><input class="rememberInput" type="radio"/>Yes</label>
+    <label class="rememberLabel"><input class="rememberInput" type="radio"/>No</label>
+</fieldset>
+<!--4Remember Me    end-->
+
+<!--5Book Now    start-->
+<button class="bookButton1" type="submit"><img src="img/button.png" alt="Book Now"/></button>
+<button class="bookButton2" type="submit">Bool Now></button>
+<!--5Book Now    end-->
 </body>
 </html>
