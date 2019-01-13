@@ -1,1 +1,190 @@
 /*《精通CSS》dome chapter4背景图像*/
+/*4.1 背景图像基础*/
+body {
+    /*background-image: url(img/bg-rear.gif);
+    background-repeat: repeat-x;
+    background-color: #d3ff99;
+    background-position: 20% 0;*/
+}
+
+.midground {
+    background-image: url(img/bg-mid.png);
+    background-repeat: repeat-x;
+    background-color: transparent;
+    background-position: 40% 0;
+}
+
+.foreground {
+    background-image: url(img/bg-front.png);
+    background-repeat: repeat-x;
+    background-color: transparent;
+    background-position: 150% 0;
+}
+
+.content {
+    max-width: 61em; /* 1098px */
+    margin: 0 auto;
+    padding: 100px 20px 0 20px;
+}
+
+/*4.2.1 固定宽度的圆角框*/
+/*1单色而且没有边框的固定宽度的圆角框：一个图像用于框的顶部，一个图像用于框的底部，在div框上设置背景颜色*/
+.box1 {
+    width: 418px;
+    background: #effce7 url(img/bottom.gif) no-repeat left bottom;
+    padding-bottom: 1px;
+}
+
+.box1 h2 {
+    background: url(img/top.gif) no-repeat left top;
+    margin-top: 0;
+    padding: 20px 20px 0 20px;
+}
+
+.box1 p {
+    padding: 0 20px;
+}
+
+/*2更多样式的固定宽度的圆角框：一个图像用于框的顶部，一个图像用于框的底部，在div框上设置重复的背景图像*/
+.box2 {
+    width: 424px;
+    background: url("img/tile2.gif") repeat-y;
+}
+
+.box2 h2 {
+    background: url(img/top2.gif) no-repeat left top;
+    padding: 20px 20px 0px 20px;
+}
+
+.box2 p {
+    background: url(img/bottom2.gif) no-repeat left bottom;
+    padding: 0px 20px 20px 20px;
+}
+
+/*3灵活的圆角框：滑动门技术，用到4个图像，一个图像像在另一个图像上滑动*/
+.box3 {
+    width: 20em;
+    background: url(img/bottom-left.gif) no-repeat left bottom;
+}
+
+.box3-outer {
+    background: url(img/bottom-right.gif) no-repeat right bottom;
+    padding-bottom: 1px;
+}
+
+.box3-inner {
+    background: url(img/top-left.gif) no-repeat left top;
+}
+
+.box3 h2 {
+    background: url(img/top-right.gif) no-repeat right top;
+    padding: 1em 1em 0em 1em;
+}
+
+.box3 p {
+    padding: 0em 1em 0em 1em;
+}
+
+/*4.2.2 山顶角*/
+/*4位图角蒙板，滑动门技术，用到4个图像，在主div框上设置背景颜色*/
+.box4 {
+    width: 20em;
+    background: #effce7 url("img/bottom-left2.gif") no-repeat left bottom;
+}
+
+.box4-outer {
+    background: url("img/bottom-right.gif") no-repeat right bottom;
+    padding-bottom: 5%;
+}
+
+.box4-inner {
+    background: url("img/top-left.gif") no-repeat left top;
+}
+
+.box4 h2 {
+    background: url("img/top-right2.gif") no-repeat right top;
+    padding: 5% 5% 0px 5%;
+}
+
+.box4 p {
+    padding: 0px 5% 0px 5%;
+}
+
+/*5background-image在一个元素中添加多个背景图像*/
+.box5 {
+    width: 30em;
+    background: #89ac11;
+    color: #fff;
+    padding: 2em 2em 2em 2em;
+    margin-top: 2em;
+    background-image: url(img/mtop-left.gif), url(img/mtop-right.gif), url(img/mbottom-left.gif), url(img/mbottom-right.gif);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: top left, top right, bottom left, bottom right;
+}
+
+/*6CSS3 border-radius圆角边框*/
+.box6 {
+    width: 30em;
+    background-color: #89ac11;
+    color: #fff;
+    padding: 2em 2em 2em 2em;
+    margin-top: 2em;
+    border-radius: 1em;
+}
+
+/*7CSS3 border-image将一个图像作为元素的边框*/
+.box7 {
+    width: 30em;
+    background-color: #89ac11;
+    color: #fff;
+    padding: 2em 2em 2em 2em;
+    margin-top: 2em;
+    -webkit-border-image: url(img/corners.gif) 25% 25% 25% 25% / 25px round round; /*这里一定要加-webkit，不然会出错*/
+}
+
+/*4.3 投影*/
+/*1使用负的外边距来偏移图像*/
+.img-wrapper1 {
+    background: url("img/shadow.gif") no-repeat bottom right;
+    float: left; /*question1:这里为什么加了float: left之后，背景图像的大小就会自动裁剪*/
+}
+
+.img-wrapper1 img {
+    background-color: #fff;
+    border: 1px solid #a9a9a9;
+    padding: 4px;
+    margin: -5px 5px 5px -5px;
+}
+
+/*2使用相对定位来偏移图像*/
+.img-wrapper2 {
+    background: url("img/shadow.gif") no-repeat bottom right;
+    float: left;
+}
+
+.img-wrapper2 img {
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #a9a9a9;
+    position: relative;
+    left: -5px;
+    top: -5px;
+}
+
+/*3CSS3 box-shadow向框添加投影*/
+.img-wrapper3 {
+    box-shadow: 3px 3px 6px #666;
+}
+
+.box8 {
+    width: 30em;
+    background-color: #89ac11;
+    color: #fff;
+    padding: 2em 2em 2em 2em;
+    margin-top: 2em;
+    -webkit-border-image: url(img/corners.gif) 25% 25% 25% 25%;
+}
+
+/*4.4 不透明度*/
+/*4.5 图像替换*/
+

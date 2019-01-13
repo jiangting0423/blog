@@ -100,7 +100,8 @@
     width: 25%;
     border: 1px solid black;
     float: left;
-    /*question5:为什么secondary3是在content3的下面？*/
+    /*question5:为什么content3文本在上面 secondary3这个div在下面？*/
+    /*answer5:因为之前content3文本在前面 secondary3这个div在后面，现在secondary3这个div在前面 content3文本在后面。要想实现浮动常见的效果，一般前div后文本*/
 }
 
 .primary3-1 {
@@ -175,6 +176,7 @@
 .p3 {
     width: 68%;
     padding: 20px;
+    margin:0;
     float: right;
 }
 

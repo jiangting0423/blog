@@ -1,0 +1,22 @@
+/*《精通CSS》dome chapter3可视化格式模型*/
+/*3.2 浮动与清除浮动*/
+.news{
+    background-color: gray;
+    border:1px solid black;
+    margin:10px red;
+    /*question1:对包含浮动元素的父元素使用clear属性，为什么不起作用？*/
+    /*answer1:clear属性的值表示该框的哪些边不应该挨着浮动框，父元素包含子元素 框的边肯定挨着，所以clear属性只能应用于与浮动元素非包含关系的元素*/
+}
+
+.news img{
+    float: left;
+}
+
+.news p{
+    float: right;
+}
+
+.clear{
+    clear:both;
+    /*让父元素包含浮动的子元素的法1*/
+}

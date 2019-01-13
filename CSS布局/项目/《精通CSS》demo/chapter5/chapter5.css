@@ -1,1 +1,34 @@
 /*《精通CSS》dome chapter5链接*/
+/*5.1 简单的链接样式*/
+a:link {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover, a:focus, a:active {
+    color: red;
+    text-decoration: underline;
+}
+
+/*5.2 让下划线更有趣*/
+.more:link, .more:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.more:hover, .more:focus, .more:active {
+    color: yellow;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/*5.3 已访问链接的样式*/
+/*5.4 为链接目标设置样式*/
+/*5.5 突出显示不同类型的链接*/
+/*5.6 创建类似按钮的链接*/
+/*5.7 纯CSS工具提示*/
